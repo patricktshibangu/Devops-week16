@@ -1,19 +1,9 @@
-pipeline {
-    agent any 
-    tools {
-        maven 'M2_HOME'
-    }
+pipeline{
+    agent any
     stages{
-        stage('sonarqube scan'){
+        stage('maven commands'){
             steps{
-                withSonarQubeEnv('sonarserver'){
-
-                }
-        stage('all maven commands'){
-            steps{
-                sh 'mvn clean test compile install package'
-            }
-        }
+                sh 'mvn clean compile install package'
             }
         }
     }
