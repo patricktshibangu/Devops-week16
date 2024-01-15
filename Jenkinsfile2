@@ -6,7 +6,7 @@ pipeline{
     stages{
         stage('sonarqube scan'){
             steps{
-                withSonaQubeEnv('sonarQube'){
+                withSonaQubeEnv('sonarserver'){
                 sh 'mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=patricktshibangu_Devops-week16'
              sh 'mvn sonar:sonar'
             }
