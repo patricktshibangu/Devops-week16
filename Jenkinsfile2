@@ -9,6 +9,7 @@ pipeline{
                 withSonaQubeEnv('sonarQube'){
                 sh 'mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=patricktshibangu_Devops-week16'
             }
+            }
         }
         stage('all maven commands'){
             steps{
@@ -17,5 +18,4 @@ pipeline{
         }
         
     }
-}
 }
