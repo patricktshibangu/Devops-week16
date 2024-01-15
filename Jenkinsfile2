@@ -6,9 +6,8 @@ pipeline {
     stages{
         stage('sonarqube scan'){
             steps{
-                withSonarQubeEnv('sonerserver'){
-                } 
-                 sh 'mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=patricktshibangu_geolocation'
+                withSonarQubeEnv('sonarserver'){ 
+              sh 'mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=patricktshibangu_geolocation'
              // sh 'mvn sonar:sonar'
             }
             }
@@ -19,4 +18,4 @@ pipeline {
             }
         }
     }
-
+}
